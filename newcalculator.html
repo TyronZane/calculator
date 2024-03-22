@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator"><h1>
+            java script <span>age calculator</span> 
+        </h1>
+        <div class="input-box">
+            <input id="date" type="date">
+            <button onclick="calc()">calculate</button>
+        </div>
+        <p style="font-size: 30px;">
+            Your age is : <span id="s_age"></span>
+        </p>
+        </div>
+       
+    </div>
+</body>
+<script>
+    function calc(){
+        let userInput = document.getElementById("date")
+        let dob = new Date(userInput.value);
+        let dob_year = dob.getFullYear();
+
+        let today = new Date();
+        let today_year = today.getFullYear();
+
+        let result = parseInt(today_year)-parseInt(dob_year);
+        document.getElementById("s_age").innerHTML=result + " years old";
+
+    }
+</script>
+</html>
